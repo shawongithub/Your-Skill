@@ -1,1 +1,1 @@
-web: gunicorn Personalized_Todo.wsgi --log-file-
+web: gunicorn Personalized_Todo.wsgi 
