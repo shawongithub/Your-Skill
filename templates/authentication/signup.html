@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+<h1>create a password for this webapplication </h1>
+{% if not registered %}
+<form method="POST">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button class="btn btn-primary btn-sm"> Submit</button>
+</form>
+{% else %}
+<div class="alert alert-success">Congratulations you are successfully signed up </div>
+{% endif %}
+
+{% endblock %}

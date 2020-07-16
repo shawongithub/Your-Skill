@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body_block %}
+<style>
+    .card{
+        text-align: center;
+    }
+    .header{
+        text-align: center;
+    }
+</style>
+<div class="header">
+    
+        <h4>hello {{user.username}}! it is your todo list page</h4>
+    
+</div>
+<br>
+<div class="header">
+    <button class="btn btn-sm btn-dark"><a href="{% url 'todo:create' %}">Add task to list</a></button>
+</div>
+
+<br><br>
+
+{% for task in lists %}
+<div class="row">
+    <div class="col sm-8">
+        <div class="card">
+            <div class="card-body">
+             <span><i>{{task.task}}</i></span>
+            </div>
+          </div>
+    </div>
+    <div class="col sm-4">
+        <div class="card">
+            <div class="card-body">
+              <button class="btn btn-dark btn-sm"><a href="{% url 'todo:update' pk=task.pk %}">update</a></button> <button class="btn btn-warning btn-sm"><a href="{% url 'todo:delete' pk=task.pk %}">delete</a></button>
+            </div>
+          </div>
+    </div>
+
+</div>
+<br>
+<br>
+{% endfor %}
+{% endblock %}
