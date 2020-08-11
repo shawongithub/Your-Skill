@@ -16,6 +16,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATES_DIR=os.path.join(BASE_DIR,'templates')
 STATIC_DIR=os.path.join(BASE_DIR,'static')
+MEDIA_DIR=os.path.join(BASE_DIR,'media')
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,9 +26,9 @@ STATIC_DIR=os.path.join(BASE_DIR,'static')
 SECRET_KEY = 'gcq*pm8kne=a)td)t%#*kd--k10cz4)5z41p+yg(_^z$sh#hzc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['personalized-todo-new.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'authentication',
     'todo',
+    'vocabulary',
 ]
 
 CRISPY_TEMPLATE_PACK='bootstrap4'
@@ -133,3 +135,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 LOGIN_URL='/authentication/login/'
 
+#media files
+
+MEDIA_ROOT=MEDIA_DIR
+MEDIA_URL='/media/'

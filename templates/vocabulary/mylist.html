@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title_block %} WordList {% endblock %}
+{% block body_block %}
+{% for word in words %}
+<div class="row">
+    <div class="col-sm-4">
+      <img src="/media/{{word.vocab.word_image}}"  width="100%">
+    </div>
+    <div class="col-sm-8">
+      <p><h4>word: {{word.vocab.word}}</h4></p>
+      <p><h6>meaning: {{word.vocab.meaning}}</h6></p>
+      <br>
+      <h6>{{word.vocab.publish_date}}</h6> 
+    </div>
+  </div>
+  <hr>
+{% endfor %}
+{% endblock %}

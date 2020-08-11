@@ -9,5 +9,14 @@
     {{form|crispy}}
     <button class="btn btn-sm btn-info">Submit</button>
  </form>
+<p>If you don't have any account. Please signup here: <button class="btn btn-sm btn-warning"><a href="{% url 'authentication:signup' %}">signup</a></button></p>
+
+   <p>
+      If you just want to watch the demo. use the information below to login
+      <br>
+      <h6>username: unicorn </h6>
+      <h6>password: pass-123</h6>
+      
+  </p>
 
 {% endblock %}

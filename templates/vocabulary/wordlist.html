@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title_block %} WordList {% endblock %}
+{% block body_block %}
+{% for word in words %}
+<div class="row">
+    <div class="col-sm-4">
+      <img src="/media/{{word.word_image}}"  width="100%">
+    </div>
+    <div class="col-sm-8">
+      <p><h4>word: {{word.word}}</h4></p>
+      <p><h6>meaning: {{word.meaning}}</h6></p>
+      <br>
+      <h6>{{word.publish_date}}</h6> 
+      <a href="{% url 'vocabulary:addtolist' pk=word.pk %}">Add to your list</a>
+      <br>
+      <a href="{% url 'vocabulary:worddetail' pk=word.pk %}">Learn More</a>
+     
+    </div>
+  </div>
+  <hr>
+{% endfor %}
+{% endblock %}

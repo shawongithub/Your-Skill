@@ -30,7 +30,7 @@ def login_page(request):
             user=authenticate(username=username,password=password)
             if user is not None:
                 login(request,user)
-                return HttpResponseRedirect(reverse('todo:list'))
+                return HttpResponseRedirect(reverse('vocabulary:wordlist'))
     context={'form':form}
     return render(request,'authentication/login.html',context)
 

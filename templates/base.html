@@ -17,9 +17,10 @@
         <li class="nav-item active">
           <a class="nav-link" href="{% url 'homepage' %}">home</a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="{% url 'todo:list' %}">Todo-list</a>
-        </li>
+         
+       <!--  <li class="nav-item ">
+          <a class="nav-link" href="{% url 'vocabulary:wordlist' %}">Words-list</a>
+        </li> -->
         {% if  user.is_authenticated %}
         <div class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -28,7 +29,8 @@
         <div class="dropdown-menu">
           
              <a class="dropdown-item" href="{% url 'authentication:logout' %}">Logout</a>
-           
+             <a class="dropdown-item" href="{% url 'vocabulary:mylist' %}">YourWords</a>
+             <a class="dropdown-item" href="{% url 'todo:list' %}">YourTodo</a>            
         </div>
        
         {% else %}
